@@ -6,14 +6,7 @@ from pathlib import Path
 
 
 class HelmetDetector:
-    def __init__(self, model_path='models/helmv4.2.pt', conf_threshold=0.5):
-        """
-        Initialize the helmet detector
-
-        Args:
-            model_path (str): Path to the trained YOLO model
-            conf_threshold (float): Confidence threshold for detections
-        """
+    def __init__(self, model_path='models/Helmet_Detection.pt', conf_threshold=0.5):
         self.model_path = model_path
         self.conf_threshold = conf_threshold
 
@@ -26,15 +19,6 @@ class HelmetDetector:
             raise
 
     def detect_image(self, image_path, save_path=None, show_result=True):
-        """
-        Run detection on a single image
-
-        Args:
-            image_path (str): Path to input image
-            save_path (str): Path to save output image (optional)
-            show_result (bool): Whether to display the result
-        """
-        # Read image
         image = cv2.imread(image_path)
         if image is None:
             print(f"Error: Could not load image from {image_path}")
@@ -47,10 +31,10 @@ class HelmetDetector:
         annotated_image = results[0].plot()
 
         # Display results
-        # if show_result:
-        #     cv2.imshow('Helmet Detection', annotated_image)
-        #     cv2.waitKey(0)
-        #     cv2.destroyAllWindows()
+        if show_result:
+            cv2.imshow('Helmet Detection', annotated_image)
+            cv2.waitKey(0)
+            cv2.destroyAllWindows()
 
         # Save results
         if save_path:
@@ -63,14 +47,6 @@ class HelmetDetector:
         return annotated_image
 
     def detect_video(self, video_path, save_path=None, show_result=True):
-        """
-        Run detection on a video
-
-        Args:
-            video_path (str): Path to input video
-            save_path (str): Path to save output video (optional)
-            show_result (bool): Whether to display the result
-        """
         cap = cv2.VideoCapture(video_path)
 
         if not cap.isOpened():
@@ -126,12 +102,6 @@ class HelmetDetector:
             print(f"Output saved to {save_path}")
 
     def detect_webcam(self, camera_index=0):
-        """
-        Run real-time detection on webcam feed
-
-        Args:
-            camera_index (int): Camera index (usually 0 for default camera)
-        """
         cap = cv2.VideoCapture(camera_index)
 
         if not cap.isOpened():
@@ -204,10 +174,12 @@ def main():
 
 
 if __name__ == "__main__":
-    # Simple test without command line arguments
-    detector = HelmetDetector('../models/helmv4.2.pt', conf_threshold=0.5)
+    # For Webcam as Input
+    detector = HelmetDetector('../models/Helmet_Detection.pt', conf_threshold=0.5)
     detector.detect_webcam()
 
+    # For Image as Input
     # detector.detect_image(f'../images/input/test.jpg', f'../images/output/result.jpg')
 
+    # For Video as Input
     # detector.detect_video('../testvid.mp4','result.mp4')
