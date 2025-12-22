@@ -40,8 +40,8 @@ This mode is intended for **model testing and validation** without hardware depe
 **Code Location**
 
 ```
-software/
- └── helmet_spoof_test.py
+codes/
+ └── software_code.py
 ```
 
 ---
@@ -68,8 +68,8 @@ This mode implements the complete system on **Raspberry Pi 5** for real-world op
 **Code Location**
 
 ```
-hardware/
- └── fnlcomb_api_stage_final_fixed4.py
+codes/
+ └── hardware_code.py
 ```
 
 ---
@@ -114,10 +114,9 @@ Decision Engine (State Machine)
 
 * Model: **YOLOv5n**
 * Training Platform: **Google Colab**
-* Best Model Version: **v4.2**
 * Dataset: Custom helmet dataset
 
-### 🔹 Training Results (v4.2)
+### 🔹 Training Results 
 
 The trained model demonstrated improved stability and accuracy compared to earlier versions, with reduced false positives and reliable real-time performance suitable for edge deployment.
 
@@ -136,7 +135,7 @@ The system output is demonstrated through a **recorded video**, showcasing:
 * Motor control behavior based on safety compliance
 
 📌 **Demo Video**:
-👉 *Add video link here (YouTube / Google Drive)*
+👉 *Add video link here (YouTube / Google Drive)/// will be added soon*
 
 ---
 
@@ -169,14 +168,13 @@ The system output is demonstrated through a **recorded video**, showcasing:
 ## 📂 Repository Structure
 
 ```
-├── hardware/
-│   └── fnlcomb_api_stage_final_fixed4.py
-├── software/
-│   └── helmet_spoof_test.py
+├── codes/
+│   └── hardware_code.py
+│   └── software_code.py
 ├── models/
-│   └── helmv4.2.pt
+│   └── Helmet_Detection.pt
 ├── results/
-│   └── training_analysis_v4.2.png
+│   └── training_results.png
 ├── README.md
 └── requirements.txt
 ```
