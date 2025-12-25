@@ -1,4 +1,4 @@
-# 🚦 An Efficient Approach to Detect Helmet and Rider Liveliness Verification to Enhance Safety in EV
+#  An Efficient Approach to Detect Helmet and Rider Liveliness Verification to Enhance Safety in EV
 
 ## 📌 Project Overview
 
@@ -120,7 +120,7 @@ Decision Engine (State Machine)
 
 The trained model demonstrated improved stability and accuracy compared to earlier versions, with reduced false positives and reliable real-time performance suitable for edge deployment.
 
-*(Detailed metrics and graphs can be added in the `results/` directory if required.)*
+*Detailed metrics and graphs can be found in the `results/` directory.*
 
 ---
 
@@ -135,7 +135,7 @@ The system output is demonstrated through a **recorded video**, showcasing:
 * Motor control behavior based on safety compliance
 
 📌 **Demo Video**:
-👉 *Add video link here (YouTube / Google Drive)/// will be added soon*
+👉 *https://www.linkedin.com/posts/guruprasadkamath-_computervision-embeddedai-ridersafety-activity-7409997144037765120-Npk_/*
 
 ---
 
